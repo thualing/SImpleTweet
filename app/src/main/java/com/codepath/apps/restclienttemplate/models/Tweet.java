@@ -5,6 +5,7 @@ import com.codepath.apps.restclienttemplate.TwitterClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -19,12 +20,17 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
+
+@Parcel
 public class Tweet{
 
     public String body;
     public String createAt;
     public User user;
     public long tweetId;
+
+    // empty constructor needed by the Parceler library
+    public Tweet(){}
 
     public static Tweet fromJson (JSONObject jsonObject) throws JSONException {
         Tweet tweet = new Tweet();
